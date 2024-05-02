@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  background-color: #e7edea;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  width: auto;
+  background-color: #ffc52c;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  height: 100px;
+  border-bottom: 12px solid#22272E;
+}
+
+#logo {
+  display: flex;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  align-items: center;
+  color: #030d4f;
+}
+
+#logo ion-icon {
+  transform: rotate(9deg);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #e7edea;
+  border-radius: 8px;
+}
+
+.search input {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  width: 300px;
+  text-align: center;
+  background-color: #e7edea;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: #e7edea;
+}
+
+#icon-lupa {
+  font-size: 20px;
+}
+
+#selecoes {
+  display: flex;
+  font-size: 26px;
+  gap: 5%;
+  align-items: center;
+}
+
+.selecao {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+
+.selecao:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.selecao p {
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+  width: max-content;
+}
+
+section.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.slider-content {
+  width: 400%;
+  height: auto;
+  display: flex;
+}
+
+.slider-content input {
+  display: none;
+}
+
+.slide-box {
+  width: 25%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+.slide-box img {
+  width: 100%;
+}
+
+.nav-manual,
+.nav-auto {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 23%;
+}
+
+.nav-manual .manual-btn,
+.nav-auto div {
+  border: 1px solid #ffc52c;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #cacbcc;
+  z-index: 1;
+}
+
+.nav-manual .manual-btn:not(:last-child),
+.nav-auto div:not(:last-child) {
+  margin-right: 15px;
+}
+
+.nav-manual .manual-btn:hover {
+  background-color: #ffc52c;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1 {
+  background-color: #ffc52c;
+  z-index: 2;
+}
+
+#radio2:checked ~ .nav-auto .auto-btn2 {
+  background-color: #ffc52c;
+  z-index: 2;
+}
+
+#radio3:checked ~ .nav-auto .auto-btn3 {
+  background-color: #ffc52c;
+  z-index: 2;
+}
+
+#radio1:checked ~ .primeiro {
+  margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro {
+  margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro {
+  margin-left: -50%;
+}
+
+.produto {
+  padding: 8px 6px 8px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.right-content {
+  display: flex;
+}
+
+.content-produto {
+  margin: 0;
+  text-align: center;
+}
+
+.content-produto p {
+  font-size: 16px;
+
+  text-align: left;
+}
+
+.content-produto button {
+  width: 100%;
+  background-color: #ffc52c;
+  border-radius: 8px;
+  height: 35px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.content-produto button:hover {
+  background-color: #6e6e6e;
+  color: #fbfbfb;
+}
+
+.content-image {
+  display: flex;
+  font-size: 25px;
+  color: #ff6666;
+}
+.content-image ion-icon {
+  position: absolute;
+}
+
+.content-image ion-icon:hover {
+  background-color: rgba(0, 0, 0, 0.17);
+  border-radius: 8px;
+}
+
+.body-content {
+  display: flex;
+}

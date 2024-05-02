@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  background-color: #e7edea;
+  justify-content: center;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  width: auto;
+  background-color: #ffc52c;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  height: 100px;
+  border-bottom: 12px solid#22272E;
+}
+
+#logo {
+  display: flex;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: italic;
+  align-items: center;
+  color: #030d4f;
+}
+
+#logo ion-icon {
+  transform: rotate(9deg);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #e7edea;
+  border-radius: 8px;
+}
+
+.search input {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  width: 300px;
+  text-align: center;
+  background-color: #e7edea;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: #e7edea;
+}
+
+#icon-lupa {
+  font-size: 20px;
+}
+
+#selecoes {
+  display: flex;
+  font-size: 26px;
+  gap: 5%;
+  align-items: center;
+}
+
+.selecao {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+
+.selecao:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.selecao p {
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+  width: max-content;
+}
+
+.lista-content {
+  padding: 25px;
+}
+
+.select-btn {
+  width: max-content;
+  background-color: #030d4f;
+  color: #e7edea;
+  padding: 6px 20px 6px 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.lista-content input {
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+}
+
+.form-list {
+  background-color: #030d4f;
+  padding: 10px;
+  border-top-right-radius: 8px;
+  margin: 0;
+}
+
+#btn-lista {
+  padding-top: 12px;
+}
+
+.lista {
+  width: 300px;
+  margin: 4.5px 0 4.5px 0;
+}
+
+.lista button {
+  background: none;
+}
+
+table {
+  background-color: #030d4f;
+  width: 100%;
+  text-align: center;
+  color: #e7edea;
+  font-weight: 600;
+}
+
+.list-results:not(:last-child) {
+  border-right: 2px solid #22272e;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none;
+}
+
+/* Style dos Modais */
+.tela {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e7edea;
+  z-index: 1001;
+  display: none;
+  border-radius: 8px;
+  margin: 0;
+  text-align: center;
+}
+
+.tela-content {
+  width: 600px;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.tela-content input {
+  background-color: white;
+  width: 300px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.tela h1 {
+  margin: 0;
+  background-color: #030d4f;
+  border: 4px solid #030d4f;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: #e7edea;
+}
+
+.btn-telas {
+  background-color: #030d4f;
+  border-radius: 8px;
+  color: #e7edea;
+  height: 35px;
+}
+
+.button-list {
+  border-radius: 8px;
+  background-color: #ffc52c;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 2px;
+}
+
+#excluir {
+  color: red;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.button-list:hover {
+  background-color: #6e6e6e;
+  color: #fbfbfb;
+}
