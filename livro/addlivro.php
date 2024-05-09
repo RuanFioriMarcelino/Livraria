@@ -7,14 +7,14 @@ $edicao = $_POST['edicao'];
 $codautor = $_POST['codautor'];
 $editora = $_POST['editora'];
 $paginas = $_POST['paginas'];
-$fotocapa = $_POST['fotocapa'];
-$valor = $_FILES['valor'];
+$fotocapa = $_FILES['fotocapa'];
+$valor = $_POST['valor'];
 
 $diretorio = "../img/";
 
-$extensao = strtolower(substr($_FILES['foto']['name'], -4));
+$extensao = strtolower(substr($_FILES['fotocapa']['name'], -4));
 $novo_nome = md5(time()) . $extensao;
-move_uploaded_file($_FILES['foto']['tmp_name'], $diretorio . $novo_nome);
+move_uploaded_file($_FILES['fotocapa']['tmp_name'], $diretorio . $novo_nome);
 
 $conectar = mysqli_connect('localhost', 'root', '', 'livraria');
 $sql = "insert into livro (titulo,codcategoria,codclassificacao,ano,edicao,codautor,editora,paginas,fotocapa,valor) values ('$titulo','$codcategoria','$codclassificacao','$ano','$edicao','$codautor','$editora','$paginas','$novo_nome','$valor')";

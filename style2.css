@@ -8,12 +8,11 @@ body {
 
 nav {
   display: flex;
-  width: auto;
   background-color: #ffc52c;
   align-items: center;
   justify-content: center;
   gap: 5%;
-  height: 100px;
+  flex-wrap: wrap;
   border-bottom: 12px solid#22272E;
 }
 
@@ -171,7 +170,6 @@ section.slider {
 }
 
 .produto {
-  padding: 8px 6px 8px 6px;
   border-radius: 5px;
   cursor: pointer;
   margin: 20px;
@@ -183,18 +181,18 @@ section.slider {
 }
 
 .content-produto {
+  padding: 8px 0 8px 0;
   margin: 0;
   text-align: center;
 }
 
 .content-produto p {
   font-size: 16px;
-
   text-align: left;
 }
 
 .content-produto button {
-  width: 100%;
+  width: 80%;
   background-color: #ffc52c;
   border-radius: 8px;
   height: 35px;
@@ -207,15 +205,21 @@ section.slider {
 .content-produto button:hover {
   background-color: #6e6e6e;
   color: #fbfbfb;
+  transition: all 0.2s;
 }
 
 .content-image {
   display: flex;
   font-size: 25px;
   color: #ff6666;
+  width: 160px;
+  justify-content: center;
+  position: relative;
+  padding: 8px 8px 8px 8px;
 }
 .content-image ion-icon {
   position: absolute;
+  right: 0;
 }
 
 .content-image ion-icon:hover {
@@ -225,4 +229,12 @@ section.slider {
 
 .body-content {
   display: flex;
+}
+
+.imagem-produto {
+  width: 75%;
+}
+
+.textH {
+  margin: 5px 0 5px 0;
 }

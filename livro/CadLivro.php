@@ -31,7 +31,7 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
         <div>
             <h1>Adicionar um registro</h1>
             <div class="tela-content">
-                <form action="addlivro.php" method="POST">
+                <form action="addlivro.php" method="POST" enctype="multipart/form-data">
 
                     <input type="text" id="titulo" name="titulo" value="" required placeholder="Título"><br>
                     <input type="number" id="codcategoria" name="codcategoria" value="" required
@@ -44,7 +44,7 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
                     <input type="text" id="edicao" name="edicao" value="" required placeholder="Edição"><br>
                     <input type="text" id="editora" name="editora" value="" required placeholder="Editora"><br>
                     <input type="number" id="paginas" name="paginas" value="" required placeholder="Páginas"><br>
-                    <input type="file" name="foto" id="foto" />
+                    <input type="file" name="fotocapa" id="fotocapa" />
                     <input type="text" id="valor" name="valor" value="" required placeholder="Valor"><br>
 
                     <button type="submit" class="btn-telas" name="cadastrar">Cadastrar</button>

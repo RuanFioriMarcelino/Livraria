@@ -1,13 +1,19 @@
 <?php
-$codigo = $_POST['codigo'];
-
 $conectar = mysqli_connect('localhost', 'root', '', 'livraria');
-$sql = "DELETE FROM categoria WHERE codigo='$codigo'";
-$resultado = mysqli_query($conectar, $sql);
+
+if (isset($_GET['id'])) {
+    $codigo = $_GET['id'];
+    $sql = "DELETE FROM categoria WHERE codigo='$codigo'";
+    $resultado = mysqli_query($conectar, $sql);
+
+} else if (isset($_POST['codigo'])) {
+    $codigo = $_POST['codigo'];
+    $sql = "DELETE FROM categoria WHERE codigo='$codigo'";
+    $resultado = mysqli_query($conectar, $sql);
+}
 ?>
 
 <script>
-    alert('Deletado com Sucesso!');
     <?php
     echo "location.href='CadCategoria.php'";
     ?>

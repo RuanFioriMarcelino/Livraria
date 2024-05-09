@@ -46,7 +46,7 @@ if (isset($_POST['p'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -115,18 +115,20 @@ if (isset($_POST['p'])) {
     </div>
 
     <div class="right-content">
-      <section class="produto">
-        <div class="content-produto">
-          <div class="content-image">
-            <img
-              src="https://lojasaraivanew.vtexassets.com/arquivos/ids/368115-200-200?v=638221978452600000&width=200&height=200&aspect=true"
-              alt="" />
-            <ion-icon name="heart-outline"></ion-icon>
-          </div>
-          <p>Nome</p>
-          <button>Comprar</button>
-        </div>
-      </section>
+      <?php
+      while ($resultado = mysqli_fetch_array($livro)) {
+        echo ' <section class="produto">
+                    <div class="content-produto">
+                      <div class="content-image">
+                        <img src="img/' . $resultado['fotocapa'] . '" alt="" class="imagem-produto" width="180px" height="180x" />
+                        <ion-icon name="heart-outline"></ion-icon>
+                      </div>
+                      <h3 class="textH">' . utf8_encode($resultado[0]) . '</h3>
+                      <button>Comprar</button>
+                    </div>
+                </section>';
+      }
+      ?>
     </div>
   </div>
 

@@ -1,13 +1,19 @@
 <?php
-$codigo = $_POST['codigo'];
-
 $conectar = mysqli_connect('localhost', 'root', '', 'livraria');
-$sql = "DELETE FROM classificacao WHERE codigo='$codigo'";
-$resultado = mysqli_query($conectar, $sql);
+
+if (isset($_GET['id'])) {
+    $codigo = $_GET['id'];
+    $sql = "DELETE FROM classificacao WHERE codigo='$codigo'";
+    $resultado = mysqli_query($conectar, $sql);
+
+} else if (isset($_POST['codigo'])) {
+    $codigo = $_POST['codigo'];
+    $sql = "DELETE FROM classificacao WHERE codigo='$codigo'";
+    $resultado = mysqli_query($conectar, $sql);
+}
 ?>
 
 <script>
-    alert('Deletado com Sucesso!');
     <?php
     echo "location.href='CadClassificacao.php'";
     ?>
