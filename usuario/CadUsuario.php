@@ -17,6 +17,13 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
 
     <nav>
         <a id="logo"><ion-icon name="bookmark-outline"></ion-icon><span>Leiame</span></a>
+        <div class="ancoras">
+            <a href="#">Usuário</a>
+            <a href="../autor/CadAutor.php">Autor</a>
+            <a href="../categoria/CadCategoria.php">Categoria</a>
+            <a href="../classificacao/CadClassificacao.php">Classificação</a>
+            <a href="../livro/CadLivro.php">Livro</a>
+        </div>
     </nav>
 
     <!--Modal Cadastrar-->

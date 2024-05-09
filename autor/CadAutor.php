@@ -17,6 +17,13 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
 
     <nav>
         <a id="logo"><ion-icon name="bookmark-outline"></ion-icon><span>Leiame</span></a>
+        <div class="ancoras">
+            <a href="../usuario/CadUsuario.php">Usuário</a>
+            <a href="#">Autor</a>
+            <a href="../categoria/CadCategoria.php">Categoria</a>
+            <a href="../classificacao/CadClassificacao.php">Classificação</a>
+            <a href="../livro/CadLivro.php">Livro</a>
+        </div>
     </nav>
 
     <!--Modal Cadastrar-->
@@ -135,8 +142,10 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
                         <td class="list-results"><?php echo $data['pais'] ?></td>
                         <td class="list-results"><?php echo $data['nacionalidade'] ?></td>
                         <td>
-                            <?php
-                            echo "<a href='excuser.php?id=" . $data['codigo'] . "'><button class='button-list' type='button' name='excluir' id='excluir'><ion-icon name='trash-outline'></ion-icon></button></a>";
+                        <?php
+                                echo "<a href='excuser.php?id=" . $data['codigo'] . "' class='button-list' id='excluir'>
+                                        <ion-icon name='trash-outline'></ion-icon>
+                                    </a>";
                             ?>
 
                             <a href="" onclick="obterDadosModal('<?php echo $strdados ?>')">
