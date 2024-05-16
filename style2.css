@@ -238,3 +238,31 @@ section.slider {
 .textH {
   margin: 5px 0 5px 0;
 }
+
+.left-content form {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 25px;
+  border-right: 2px solid gray;
+}
+
+label {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+select {
+  border: none;
+  padding: 4px;
+  text-align: center;
+}
+
+input {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #030d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}

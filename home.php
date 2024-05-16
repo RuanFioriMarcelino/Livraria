@@ -1,7 +1,7 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "livraria");
 
-$sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, categoria.nome, classificacao.nome, autor.nome FROM livro, categoria, classificacao, autor
+$sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, livro.valor, categoria.nome, classificacao.nome, autor.nome FROM livro, categoria, classificacao, autor
 WHERE livro.codautor = autor.codigo
 AND livro.codclassificacao = classificacao.codigo
 AND livro.codcategoria = categoria.codigo";
@@ -13,6 +13,7 @@ if (isset($_POST['p'])) {
   $autor = (empty($_POST['autor'])) ? 'null' : $_POST['autor'];
   $categoria = (empty($_POST['categoria'])) ? 'null' : $_POST['categoria'];
   $classificacao = (empty($_POST['classificacao'])) ? 'null' : $_POST['classificacao'];
+  $valor = (empty($_POST['valor'])) ? 'null' : $_POST['valor'];
 
 
   if ($autor <> 'null') {
@@ -33,6 +34,12 @@ if (isset($_POST['p'])) {
     $classificacaosql = '';
   }
 
+  if ($valor <> 'null') {
+    $valorsql = 'and livro.valor ' . $valor . '';
+  } else {
+    $valorsql = '';
+  }
+
   $sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, categoria.nome, classificacao.nome, autor.nome 
     FROM livro, categoria, classificacao, autor
     WHERE livro.codautor = autor.codigo
@@ -40,8 +47,9 @@ if (isset($_POST['p'])) {
     AND livro.codcategoria = categoria.codigo
     $autorsql
     $classificacaosql
-    $categoriasql";
-    $livro = mysqli_query($connect, $sql_livro);
+    $categoriasql
+    $valorsql";
+  $livro = mysqli_query($connect, $sql_livro);
 }
 ?>
 
@@ -115,14 +123,15 @@ if (isset($_POST['p'])) {
         <!-- Filtro Autor -->
         <label for="">Autor </label>
         <select name="autor" class="">
-            <option value="" selected="selected">Selecione...</option>
-            <?php
-            $query = mysqli_query($connect, "SELECT codigo, nome FROM autor");
-            while ($autor = mysqli_fetch_array($query)) { ?>
-                <option value="<?php echo $autor['codigo'] ?>">
-                    <?php echo $autor['nome'] ?></option>
-            <?php }
-            ?>
+          <option value="" selected="selected">Selecione...</option>
+          <?php
+          $query = mysqli_query($connect, "SELECT codigo, nome FROM autor");
+          while ($autor = mysqli_fetch_array($query)) { ?>
+            <option value="<?php echo $autor['codigo'] ?>">
+              <?php echo $autor['nome'] ?>
+            </option>
+          <?php }
+          ?>
         </select>
 
         <!-- Filtro Categoria -->
@@ -130,12 +139,13 @@ if (isset($_POST['p'])) {
         <select name="categoria" class="">
           <option value="" selected="selected">Selecione...</option>
           <?php
-            $query2 = mysqli_query($connect, "SELECT codigo, nome FROM categoria");
-            while ($categoria = mysqli_fetch_array($query2)) { ?>
-              <option value="<?php echo $categoria['codigo'] ?>">
-                <?php echo $categoria ['nome'] ?> </option>
-              <?php }
-              ?>
+          $query2 = mysqli_query($connect, "SELECT codigo, nome FROM categoria");
+          while ($categoria = mysqli_fetch_array($query2)) { ?>
+            <option value="<?php echo $categoria['codigo'] ?>">
+              <?php echo $categoria['nome'] ?>
+            </option>
+          <?php }
+          ?>
         </select>
 
         <!-- Filtro Classificacao -->
@@ -143,23 +153,25 @@ if (isset($_POST['p'])) {
         <select name="classificacao" class="">
           <option value="" selected="selected">Selecione...</option>
           <?php
-            $query3 = mysqli_query($connect,"SELECT codigo, nome FROM classificacao");
-            while ($classificacao = mysqli_fetch_array($query3)) { ?>
-             <option value="<?php echo $classificacao ['codigo'] ?>">
-              <?php echo $classificacao ['nome'] ?> </option>
-            <?php }
-            ?>
+          $query3 = mysqli_query($connect, "SELECT codigo, nome FROM classificacao");
+          while ($classificacao = mysqli_fetch_array($query3)) { ?>
+            <option value="<?php echo $classificacao['codigo'] ?>">
+              <?php echo $classificacao['nome'] ?>
+            </option>
+          <?php }
+          ?>
         </select>
 
         <!-- Filtro Classificacao -->
         <label for="">Valor</label>
         <select name="valor" class="">
           <option value="" selected="selected">Selecione...</option>
-             <option value="10">10</option>
-             <option value="256">256</option>
+          <option value=">= 0 and livro.valor <= 50">Até 50</option>
+          <option value=">= 50 and livro.valor <= 100">Entre 50 e 100</option>
+          <option value=">= 100 and livro.valor <= 200">Entre 100 e 200</option>
         </select>
 
-        <input type="submit" name="p" value="pesquisar">
+        <input type="submit" name="p" value="Filtrar">
       </form>
     </div>
 
