@@ -8,13 +8,14 @@ AND livro.codcategoria = categoria.codigo";
 $livro = mysqli_query($connect, $sql_livro);
 
 
-
 if (isset($_POST['p'])) {
   $autor = (empty($_POST['autor'])) ? 'null' : $_POST['autor'];
   $categoria = (empty($_POST['categoria'])) ? 'null' : $_POST['categoria'];
   $classificacao = (empty($_POST['classificacao'])) ? 'null' : $_POST['classificacao'];
   $valor = (empty($_POST['valor'])) ? 'null' : $_POST['valor'];
+  $titulo = (empty($_POST['buscaLivro'])) ? 'null' : $_POST['buscaLivro'];
 
+ 
 
   if ($autor <> 'null') {
     $autorsql = 'and autor.codigo = ' . $autor . '';
@@ -40,6 +41,11 @@ if (isset($_POST['p'])) {
     $valorsql = '';
   }
 
+
+  if ($titulo <> 'null') {
+      $titulosql = $titulosql . " WHERE nome like '%" . $_POST['nome'] . "%'";
+  }
+
   $sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, categoria.nome, classificacao.nome, autor.nome 
     FROM livro, categoria, classificacao, autor
     WHERE livro.codautor = autor.codigo
@@ -48,9 +54,11 @@ if (isset($_POST['p'])) {
     $autorsql
     $classificacaosql
     $categoriasql
-    $valorsql";
+    $valorsql
+    $titulosql";
   $livro = mysqli_query($connect, $sql_livro);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -63,12 +71,20 @@ if (isset($_POST['p'])) {
   <script src="script.js" defer></script>
   <title>Leiame</title>
 </head>
-
 <body>
   <nav>
     <a id="logo"><ion-icon name="bookmark-outline"></ion-icon><span>Leiame</span></a>
-    <label class="search"><input type="text" placeholder="O que você está procurando?" value="" name="search" /><button>
-        <ion-icon name="search-outline" id="icon-lupa"></ion-icon></button></label>
+    <form method="POST" action="">
+      <label class="search">
+        <input type="text" name="buscaLivro" id="buscaLivro" placeholder="O que você está procurando?" />
+          <button type="submit" name="pesquisar" value="pesquisar">
+            <ion-icon name="search-outline" id="icon-lupa"></ion-icon>
+          </button>
+        </label>
+      </form>
+
+
+
     <div id="selecoes">
       <a class="selecao"><ion-icon name="heart-outline"></ion-icon>
         <p>Favoritos</p>
@@ -169,6 +185,7 @@ if (isset($_POST['p'])) {
           <option value=">= 0 and livro.valor <= 50">Até 50</option>
           <option value=">= 50 and livro.valor <= 100">Entre 50 e 100</option>
           <option value=">= 100 and livro.valor <= 200">Entre 100 e 200</option>
+          <option value=">= 200 and livro.valor <= 300">Entre 200 e 300</option>
         </select>
 
         <input type="submit" name="p" value="Filtrar">
