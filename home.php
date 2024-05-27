@@ -15,7 +15,7 @@ if (isset($_POST['p'])) {
   $valor = (empty($_POST['valor'])) ? 'null' : $_POST['valor'];
   $titulo = (empty($_POST['buscaLivro'])) ? 'null' : $_POST['buscaLivro'];
 
- 
+
 
   if ($autor <> 'null') {
     $autorsql = 'and autor.codigo = ' . $autor . '';
@@ -41,10 +41,12 @@ if (isset($_POST['p'])) {
     $valorsql = '';
   }
 
-
   if ($titulo <> 'null') {
-      $titulosql = $titulosql . " WHERE nome like '%" . $_POST['nome'] . "%'";
+    $titulosql = " and titulo like '%" . $titulo . "%'";
+  } else {
+    $titulosql = '';
   }
+
 
   $sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, categoria.nome, classificacao.nome, autor.nome 
     FROM livro, categoria, classificacao, autor
@@ -71,17 +73,18 @@ if (isset($_POST['p'])) {
   <script src="script.js" defer></script>
   <title>Leiame</title>
 </head>
+
 <body>
   <nav>
     <a id="logo"><ion-icon name="bookmark-outline"></ion-icon><span>Leiame</span></a>
     <form method="POST" action="">
       <label class="search">
         <input type="text" name="buscaLivro" id="buscaLivro" placeholder="O que você está procurando?" />
-          <button type="submit" name="pesquisar" value="pesquisar">
-            <ion-icon name="search-outline" id="icon-lupa"></ion-icon>
-          </button>
-        </label>
-      </form>
+        <button type="submit" name="p" value="pesquisar">
+          <ion-icon name="search-outline" id="icon-lupa"></ion-icon>
+        </button>
+      </label>
+    </form>
 
 
 
@@ -89,12 +92,7 @@ if (isset($_POST['p'])) {
       <a class="selecao"><ion-icon name="heart-outline"></ion-icon>
         <p>Favoritos</p>
       </a>
-      <a class="selecao"><ion-icon name="person-outline"></ion-icon>
-        <p>Entrar</p>
-      </a>
-      <a class="selecao"><ion-icon name="basket-outline"></ion-icon>
-        <p>Minha cesta</p>
-      </a>
+
     </div>
   </nav>
 
