@@ -8,7 +8,7 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <script src="../script.js" defer></script>
     <title>Autor</title>
 </head>
@@ -105,7 +105,7 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
             </label>
 
         </form>
-        <table>
+        <table class="table-nav">
             <tr>
                 <td>Codigo</td>
                 <td>Nome</td>
@@ -142,8 +142,8 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
                         <td class="list-results"><?php echo $data['pais'] ?></td>
                         <td class="list-results"><?php echo $data['nacionalidade'] ?></td>
                         <td>
-                        <?php
-                                echo "<a href='excuser.php?id=" . $data['codigo'] . "' class='button-list' id='excluir'>
+                            <?php
+                            echo "<a href='excuser.php?id=" . $data['codigo'] . "' class='button-list' id='excluir'>
                                         <ion-icon name='trash-outline'></ion-icon>
                                     </a>";
                             ?>

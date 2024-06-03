@@ -8,7 +8,7 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <script src="../script.js" defer></script>
     <title>Livros</title>
 </head>
@@ -112,7 +112,7 @@ $connect = mysqli_connect('localhost', 'root', '', 'livraria');
             </label>
 
         </form>
-        <table>
+        <table class="table-nav">
             <tr>
                 <td>Código</td>
                 <td>Título</td>

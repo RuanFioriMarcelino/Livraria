@@ -179,6 +179,7 @@ section.slider {
 
 .right-content {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .content-produto {
@@ -245,7 +246,7 @@ section.slider {
   flex-direction: column;
   height: auto;
   padding: 0 25px;
-  border-right: 2px solid rgba(34, 39, 46, 0.2) ;
+  border-right: 2px solid rgba(34, 39, 46, 0.2);
 }
 
 .left-content {
@@ -264,7 +265,6 @@ label {
   text-align: center;
   font-size: 15px;
   transition: all 1s;
-
 }
 
 .left-content input {
@@ -278,7 +278,7 @@ label {
   transition: all 0.2s;
 }
 
-.left-content input:hover{
+.left-content input:hover {
   transform: scale(1.05);
   transition: all 0.2s;
 }

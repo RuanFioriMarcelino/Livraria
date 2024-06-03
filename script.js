@@ -16,7 +16,7 @@ function proximaImg() {
 }
 
 function mostrarTela(elementoTela) {
-  var btnLista = document.getElementById("btn-lista"); 
+  var btnLista = document.getElementById("btn-lista");
   var overlay = document.getElementById("overlay");
 
   overlay.style.display = "block";
@@ -32,7 +32,7 @@ function fecharTela() {
   var btnAlterar = document.getElementById("btn-alterar");
   var btnExcluir = document.getElementById("btn-excluir");
   var btnCadastrar = document.getElementById("btn-cadastrar");
-  var btnLista = document.getElementById("btn-lista"); 
+  var btnLista = document.getElementById("btn-lista");
 
   overlay.style.display = "none";
   telaCadastro.style.display = "none";
@@ -48,7 +48,7 @@ function fecharTela() {
 function mostrarTelaCadastro() {
   var telaCadastro = document.getElementById("tela-cadastro");
   var btncadastrar = document.getElementById("btn-cadastrar");
-  
+
   btncadastrar.style.paddingTop = "12px";
 
   mostrarTela(telaCadastro);
@@ -57,7 +57,6 @@ function mostrarTelaCadastro() {
 function mostrarTelaAlterar() {
   var telaAlterar = document.getElementById("tela-alterar");
   var btnAlterar = document.getElementById("btn-alterar");
-
 
   btnAlterar.style.paddingTop = "12px";
 
@@ -69,8 +68,24 @@ function mostrarTelaExcluir() {
   var btnAlterar = document.getElementById("btn-alterar");
   var btnExcluir = document.getElementById("btn-excluir");
 
-
   btnExcluir.style.paddingTop = "12px";
 
   mostrarTela(telaExcluir);
+}
+
+var radios = document.querySelectorAll(".manual-btn");
+var cont = 1;
+
+document.getElementById("radio1").checked = true;
+
+setInterval(proximaImg, 5000);
+
+function proximaImg() {
+  cont++;
+
+  if (cont > 3) {
+    cont = 1;
+  }
+
+  document.getElementById("radio" + cont).checked = true;
 }

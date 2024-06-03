@@ -27,15 +27,15 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: #22272E;
+  background-color: #22272e;
   position: absolute;
   bottom: 0;
-  
 }
 
 .ancoras a {
   color: #e7edea;
-  text-decoration: none;}
+  text-decoration: none;
+}
 
 #logo {
   display: flex;
@@ -146,7 +146,7 @@ button {
   background: none;
 }
 
-table {
+.table-nav {
   background-color: #030d4f;
   width: 100%;
   text-align: center;

@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  background-color: #e7edea;
+  justify-content: center;
+  height: 100vh;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  width: auto;
+  background-color: #ffc52c;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  height: 100px;
+  flex-direction: column;
+  position: relative;
+  padding: 0 0 25px 0;
+}
+
+#logo {
+  display: flex;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: italic;
+  align-items: center;
+  color: #030d4f;
+}
+
+#logo ion-icon {
+  transform: rotate(9deg);
+}
+
+.ancoras {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #22272e;
+  position: absolute;
+  bottom: 0;
+}
+
+.ancoras a {
+  color: #e7edea;
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 2px solid red;
+}
+
+tr {
+  display: flex;
+  border: 2px solid yellow;
+  flex-direction: column;
+}
+
+td {
+  display: flex;
+  gap: 12px;
+  border: 2px solid blue;
+}
+
+.grid {
+  border: 2px solid orange;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.grid2 {
+  border: 2px solid orange;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}

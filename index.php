@@ -69,7 +69,7 @@ if (isset($_POST['p'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="styles/index.css" />
   <script src="script.js" defer></script>
   <title>Leiame</title>
 </head>
@@ -89,8 +89,14 @@ if (isset($_POST['p'])) {
 
 
     <div id="selecoes">
-      <a class="selecao"><ion-icon name="heart-outline"></ion-icon>
+      <a class="selecao" href="./vendas/vendas.php"><ion-icon name="heart-outline"></ion-icon>
         <p>Favoritos</p>
+      </a>
+      <a class="selecao"><ion-icon name="person-outline"></ion-icon>
+        <p>Entrar</p>
+      </a>
+      <a class="selecao"><ion-icon name="basket-outline"></ion-icon>
+        <p>Minha cesta</p>
       </a>
 
     </div>
@@ -203,6 +209,7 @@ if (isset($_POST['p'])) {
                       <button>Comprar</button>
                     </div>
                 </section>';
+
       }
       ?>
     </div>
