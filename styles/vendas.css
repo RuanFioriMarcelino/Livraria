@@ -55,21 +55,21 @@ nav {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 table {
   border: 2px solid red;
 }
-
-tr {
+.box-tr {
   display: flex;
   border: 2px solid yellow;
   flex-direction: column;
 }
 
-td {
+.box-td {
   display: flex;
-  gap: 12px;
+
   border: 2px solid blue;
 }
 
@@ -85,4 +85,21 @@ td {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+}
+
+.box-tr-2 {
+  width: 100%;
+}
+
+.td-result {
+  background-color: #ffc52c;
+  text-align: center;
+}
+
+.td-title {
+  background-color: aqua;
+}
+
+.tabela2 {
+  width: 50%;
 }
