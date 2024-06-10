@@ -28,61 +28,65 @@ $total_valor = 0;
     </nav>
 
     <div class="container">
-        <table>
-            <tr class="box-tr">
-                <td class="box-td">
-                    <div class="grid">
-                        <label>Cliente:<input /></label>
-                        <label>Valor Total R$:<span id="total-valor">0</span></label>
-                        <label>Data:<input type="date" /></label>
-                    </div>
-                    <div class="grid2">
-                        <label>Hora:<input type="date" /></label>
-                        <label>Endereço:<input type="" /></label>
-                        <label>Valor desconto:<input /></label>
-                    </div>
-                </td>
-            </tr>
+        <div class="table-content">
+            <table class="tabela">
+                <tr class="box-tr">
+                    <td class="box-td">
+                        <div class="grid">
+                            <label>Cliente:<input class="box-data" /></label>
+                            <label>Data:<input type="date" class="box-data" /></label>
+                            <label>Hora:<input type="date" class="box-data" /></label>
+                        </div>
+                        <div class="grid">
+                            <label>Endereço:<input placeholder="Ex: Rua... / Avenida..." class="box-data" /></label>
+                            <label>Cupom de desconto:<input class="box-data" /></label>
+                            <label>Valor desconto:<span class="box-data">0</span></label>
+                        </div>
+                    </td>
+                </tr>
 
-        </table>
-        <table class="tabela2">
-            <thead class="box-tr-2">
-                <th class="td-title">Código</th>
-                <th class="td-title">Título</th>
-                <th class="td-title">Quantidade</th>
-                <th class="td-title">Preço</th>
-                <th class="td-title"></th>
-            </thead>
+            </table>
+            <table class="tabela2">
+                <thead class="box-tr-2">
+                    <th class="td-title title1">Código</th>
+                    <th class="td-title">Título</th>
+                    <th class="td-title">Quantidade</th>
+                    <th class="td-title">Preço</th>
+                    <th class="td-title title2"></th>
+                </thead>
 
-            <tbody>
-                <?php
-                while ($resultado = mysqli_fetch_array($livro)) {
-                    $codigo = $resultado['codigo'];
-                    $titulo = $resultado['titulo'];
-                    $valor = $resultado['valor'];
+                <tbody>
+                    <?php
+                    while ($resultado = mysqli_fetch_array($livro)) {
+                        $codigo = $resultado['codigo'];
+                        $titulo = $resultado['titulo'];
+                        $valor = $resultado['valor'];
 
-                    echo '
+                        echo '
                     <tr>
-                      <td class="td-result">' . $codigo . '</td>
+                      <td class="td-result result-radius1">' . $codigo . '</td>
                       <td class="td-result">' . $titulo . '</td>
                       <td class="td-result quantidade" data-preco="' . $valor . '">1</td>
                       <td class="td-result">' . $valor . '</td>
-                      <td class="td-result">
-                      <button class="increment">+</button>
-                      <button class="decrement">-</button></td>
+                      <td class="td-result result-radius2">
+                      <button class="increment button">+</button>
+                      <button class="decrement button">-</button></td>
                     </tr>
                     ';
-                }
-                ?>
-            </tbody>
+                    }
+                    ?>
+                </tbody>
 
-            <tfoot>
-                <tr>
-                    <td colspan="4">Total Quantidade: <span id="total-quantidade">0</span></td>
-                    <td>Total: R$<span id="total">0.00</span></td>
-                </tr>
-            </tfoot>
-        </table>
+                <tfoot class="tr-rodape">
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class="td-total"><span class="totaltext">Total Quantidade: <span
+                                    id="total-quantidade">0</span></span></td>
+                        <td class="td-total"><span class="totaltext">Total: R$<span id="total">0.00</span></span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 
     <script>

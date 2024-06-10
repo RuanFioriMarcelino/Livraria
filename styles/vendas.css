@@ -56,35 +56,34 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 70%;
+  border: 1px solid red;
 }
 
-table {
-  border: 2px solid red;
+.table-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px;
+  gap: 28px;
+  border-radius: 25px;
+  background-color: rgba(255, 197, 44, 0.2);
 }
+
 .box-tr {
   display: flex;
-  border: 2px solid yellow;
   flex-direction: column;
 }
 
 .box-td {
   display: flex;
-
-  border: 2px solid blue;
 }
 
 .grid {
-  border: 2px solid orange;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-}
-
-.grid2 {
-  border: 2px solid orange;
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
+  width: 100%;
 }
 
 .box-tr-2 {
@@ -94,12 +93,81 @@ table {
 .td-result {
   background-color: #ffc52c;
   text-align: center;
+  padding: 4px;
 }
 
 .td-title {
-  background-color: aqua;
+  padding: 4px;
+}
+
+.title1 {
+  border-top-left-radius: 8px;
+}
+
+.title2 {
+  border-top-right-radius: 8px;
+}
+
+.result-radius1 {
+  border-bottom-left-radius: 8px;
+}
+.result-radius2 {
+  border-bottom-right-radius: 8px;
+}
+
+.td-title {
+  background-color: #030d4f;
+  color: #e7edea;
+}
+
+.tabela {
+  width: 100%;
 }
 
 .tabela2 {
-  width: 50%;
+  width: 100%;
+}
+
+label {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.box-data {
+  display: flex;
+  border-radius: 4px;
+  background-color: #22272e44;
+  border: none;
+  width: 40%;
+  height: 25px;
+  text-align: center;
+  justify-content: center;
+}
+
+.totaltext {
+  background-color: #030d4f;
+  color: #e7edea;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.td-total {
+  padding: 8px 0 0 40px;
+}
+
+.button {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  color: #e7edea;
+}
+.increment {
+  background-color: green;
+}
+
+.decrement {
+  background-color: red;
 }
