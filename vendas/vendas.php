@@ -33,7 +33,7 @@ $total_valor = 0;
                 <tr class="box-tr">
                     <td class="box-td">
                         <div class="grid">
-                            <label>Cliente:<input class="box-data" /></label>
+                            <label>Cliente:<input class="box-data" placeholder="Ex:...Ruan" /></label>
                             <label>Data:<input type="date" class="box-data" /></label>
                             <label>Hora:<input type="date" class="box-data" /></label>
                         </div>

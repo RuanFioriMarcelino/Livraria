@@ -1,7 +1,7 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "livraria");
 
-$sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, livro.valor, categoria.nome, classificacao.nome, autor.nome FROM livro, categoria, classificacao, autor
+$sql_livro = "SELECT livro.titulo, livro.fotocapa, livro.valor, categoria.nome, classificacao.nome, autor.nome, livro.codigo FROM livro, categoria, classificacao, autor
 WHERE livro.codautor = autor.codigo
 AND livro.codclassificacao = classificacao.codigo
 AND livro.codcategoria = categoria.codigo";
@@ -89,7 +89,8 @@ if (isset($_POST['p'])) {
 
 
     <div id="selecoes">
-      <a class="selecao" href="./vendas/vendas.php"><ion-icon name="heart-outline"></ion-icon>
+
+      <a class="selecao" href=""><ion-icon name="heart-outline" onClick="goToVendas()"></ion-icon>
         <p>Favoritos</p>
       </a>
       <a class="selecao"><ion-icon name="person-outline"></ion-icon>
@@ -203,9 +204,9 @@ if (isset($_POST['p'])) {
                     <div class="content-produto">
                       <div class="content-image">
                         <img src="img/' . $resultado['fotocapa'] . '" alt="" class="imagem-produto" width="180px" height="180x" />
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name="heart-outline" onClick="addCart(' . $resultado[6] . ')"></ion-icon>
                       </div>
-                      <h3 class="textH">' . utf8_encode($resultado[0]) . '</h3>
+                      <h3 class="textH">' . ($resultado[0]) . '</h3>
                       <button>Comprar</button>
                     </div>
                 </section>';
@@ -214,6 +215,26 @@ if (isset($_POST['p'])) {
       ?>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    var cart = []
+    function addCart(a) {
+      cart.push(a)
+      console.log(cart)
+    }
+
+    function goToVendas() {
+      var dados = JSON.stringify(cart);
+      &.ajax({
+        url: 'home.php',
+        type: 'POST',
+        data: { data: dados },
+      }
+      )
+    }
+
+    console.log(cart)
+  </script>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
